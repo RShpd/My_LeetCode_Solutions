@@ -1,23 +1,29 @@
 //Given a roman numeral, convert it to an integer.
 //Level: Easy
 
+//Runtime   130 ms
+//Memory 	39.6 MB
+
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
-    public int romanToInt(String s) {
+    public static int romanToInt(String s) {
        Map<String, Integer> map = new HashMap<String, Integer>();
 
-        map.put("I", new Integer(1));
-        map.put("IV", new Integer(4));
-        map.put("V", new Integer(5));
-        map.put("IX", new Integer(9));
-        map.put("X", new Integer(10));
-        map.put("XL", new Integer(40));
-        map.put("L", new Integer(50));
-        map.put("XC", new Integer(90));
-        map.put("C", new Integer(100));
-        map.put("CD", new Integer(400));
-        map.put("D", new Integer(500));
-        map.put("CM", new Integer(900));
-        map.put("M", new Integer(1000));
+        map.put("I", 1);
+        map.put("IV", 4);
+        map.put("V", 5);
+        map.put("IX", 9);
+        map.put("X", 10);
+        map.put("XL", 40);
+        map.put("L", 50);
+        map.put("XC", 90);
+        map.put("C", 100);
+        map.put("CD", 400);
+        map.put("D", 500);
+        map.put("CM", 900);
+        map.put("M", 1000);
 
         Integer result = 0;
         for(int i = 0; i<s.length(); i++){
