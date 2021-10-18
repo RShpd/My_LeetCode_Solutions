@@ -7,7 +7,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution {
+class RomanToIntSolution {
     public static int romanToInt(String s) {
        Map<String, Integer> map = new HashMap<String, Integer>();
 
