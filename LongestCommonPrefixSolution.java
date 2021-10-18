@@ -19,7 +19,7 @@ public class LongestCommonPrefixSolution {
             }
             pattern = pattern.substring(0, i);
             //if can't find any match at any point, it's not necessary to continue to search
-            if (pattern.isEmpty()) break;
+            if (pattern.isEmpty()) return "";
         }
         return pattern;
     }
