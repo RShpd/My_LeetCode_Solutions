@@ -4,7 +4,7 @@
 //Runtime   7 ms
 //Memory 	38.3 MB
 
-public class PalindromeNumber {
+public class PalindromeNumberSolution {
     public static boolean isPalindrome(int x) {
         if(x<0) return false;
 
