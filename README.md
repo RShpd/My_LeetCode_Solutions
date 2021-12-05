@@ -9,3 +9,5 @@
 * Try to find new solutions that they don't come to mind in the first look. This way new paths will activate in your mind.
 * There are some nice and smart solutions for a simple problem that you can't even think of it!
 * Consider the real life situations as an important parameter when you're choosing the best solution among some possible solutions.
+* Beware of border cases!
+* A timely and accurate return/exit will save a lot of execution time. 
