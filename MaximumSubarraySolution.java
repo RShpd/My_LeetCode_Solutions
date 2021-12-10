@@ -1,52 +1,21 @@
 //Given an integer array nums, find the contiguous subarray (containing at least one number)
 // which has the largest sum and return its sum.
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class MaximumSubarraySolution {
     private static int maxSubArray(int[] nums) {
-        if (nums.length == 1) return nums[0];
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
 
-        int arraySum;
-        int sum;
-        int end = nums.length - 1;
-        int start = 0;
-
-        sum = IntStream.of(Arrays.copyOfRange(nums, start, nums.length)).sum();
-        arraySum = nums[0];
-
-        for (int i = 1; i < nums.length; i++) {
-            int a = Integer.MIN_VALUE;
-            try {
-                if (i == (end + 1)) a = nums[i];
-                else a = IntStream.of(Arrays.copyOfRange(nums, i, end + 1)).sum();
-            } catch (Exception e) {
-                System.out.println(e.toString());
-            }
-
-            if (a > arraySum) {
-                start = i;
-                arraySum = a;
-            }
-
-            int b = Integer.MIN_VALUE;
-            try {
-                if (start == end - (i - 1)) b = nums[start];
-                else b = IntStream.of(Arrays.copyOfRange(nums, start, end - (i - 1))).sum();
-            } catch (Exception e) {
-                System.out.println(e.toString());
-            }
-            if (b > arraySum) {
-                end = end - i;
-                arraySum = b;
-            }
+        for (int num : nums) {
+            sum += num;
+            max = Math.max(sum, max);
+            if (sum <= 0) sum = 0;
         }
-        return Math.max(sum, arraySum);
+        return max;
     }
 
     public static void main(String[] args) {
-        int[] nums = {5,4,-1,7,8};
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int result = maxSubArray(nums);
         System.out.println(result);
     }
