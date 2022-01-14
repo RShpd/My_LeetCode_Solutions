@@ -17,31 +17,17 @@ public class AddBinarySolution {
         }
 
         for (int i = len - 1; i >= 0; i--) {
-            x[i] = Character.getNumericValue(a.charAt(i));
-            y[i] = Character.getNumericValue(b.charAt(i));
+            //subtract by '0' to convert the numbers from a char type into an int
+            x[i] = a.charAt(i) - '0';
+            y[i] = b.charAt(i) - '0';
         }
 
         String result = "";
         int temp = 0;
         for (int i = len - 1; i >= 0; i--) {
             int sum = x[i] + y[i] + temp;
-            switch (sum) {
-                case 0:
-                    result = "0".concat(result);
-                    break;
-                case 1:
-                    result = "1".concat(result);
-                    temp = 0;
-                    break;
-                case 2:
-                    result = "0".concat(result);
-                    temp = 1;
-                    break;
-                case 3:
-                    result = "1".concat(result);
-                    temp = 1;
-                    break;
-            }
+            temp = (sum>1) ? 1 : 0;
+            result = Integer.toString(sum%2).concat(result);
         }
         if (temp == 1) result = "1".concat(result);
         return result;
